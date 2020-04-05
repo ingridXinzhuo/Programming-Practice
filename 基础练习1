@@ -40,6 +40,10 @@ public static void main(String[] args){
   }
 }
 
+**************笔记
+对我来说的难点竟然是long的转化。。。用interger parse一直报错还不知道为啥。。。
+以前没有用过long但现在会了！
+
 ---------------------------------------------------------------------------------------------------------
 
 2.数字分类 (20)
@@ -61,6 +65,7 @@ A5 = 被5除后余4的数字中最大数字。
 
 输出例子:
 30 11 2 9.7 9
+
 import java.util.Scanner;
 import java.util.ArrayList;
 public class Main{
@@ -101,3 +106,10 @@ public class Main{
         System.out.println(a5 == 0 ? "N" : String.valueOf(a5));
     }
 }
+
+
+**************笔记
+对我来说最大的难点是a4的花式转化。
+首先，两个int相除肯定是int，所以之前运行double的精度一直不对，上火半天发现是int的运算。。。
+其次，double的精度也不会写，现查的。
+其他的感觉就没什么了，思路还是比较清晰的。
