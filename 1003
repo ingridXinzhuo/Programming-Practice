@@ -1,0 +1,52 @@
+//5th apri 2020
+
+1003.令Pi表示第i个素数。现任给两个正整数M <= N <= 10000，请输出PM到PN的所有素数。
+输入描述:
+输入在一行中给出M和N，其间以空格分隔。
+输出描述:
+输出从PM到PN的所有素数，每10个数字占1行，其间以空格分隔，但行末不得有多余空格。
+输入例子:
+5 27
+输出例子:
+11 13 17 19 23 29 31 37 41 43
+47 53 59 61 67 71 73 79 83 89
+97 101 103
+
+import java.util.Scanner;
+import java.util.ArrayList;
+public class Main{
+    public static void main(String[] args){
+        Scanner console = new Scanner(System.in);
+        String[] input = console.nextLine().split(" ");
+        int M = Integer.parseInt(input[0]);
+        int N = Integer.parseInt(input[1]);
+        ArrayList<Integer> suShu = new ArrayList<>();
+        suShu.add(2);
+        suShu.add(3);
+        int count = 2;
+        for (int i = 5; count < N; i++){
+            boolean find = false;
+            for (int j = 2; j <= i/2; j++){
+                if (i % j == 0){
+                    find = true;break;
+                }
+            }
+            if(!find){
+                count++;
+                suShu.add(i);
+            }
+        }
+        int printCount = 1;
+        for (int i = M - 1; i < N;i++){
+            if (printCount % 10 == 0 || i == N - 1)
+                System.out.println(suShu.get(i));
+            else
+                System.out.print(suShu.get(i) + " ");
+            printCount ++;
+        }
+    }
+}
+*************笔记
+一开始看题还以为很难，但是写起来发现还挺容易的，跑了两遍就全过了，开心。
+考点应该就是求素数的算法和打印了吧。没啥问题。
+第一遍运行break忘记换行了，怎么运行都不对，还是不能忽略格式哦。
